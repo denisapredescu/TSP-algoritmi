@@ -14,7 +14,6 @@ class Doi_OPT:
         return f[: i] + f[i : j][::-1] + f[j: ]
 
     def opt(self, algoritm_determinare_ciclu):
-
         if algoritm_determinare_ciclu == "farthest-insertion":
             f, solutie = EuristiciGreedy.farthestInsertion(self.n, self.D)
         elif algoritm_determinare_ciclu == "nearest-insertion":
