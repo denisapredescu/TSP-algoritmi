@@ -53,9 +53,9 @@ class Christofides:
         muchii_match_solutie_minima = None
         
         for _ in range(repetari):
-            solutie = 0
             while True:
                 ok = True
+                solutie = 0
                 muchii_match = []      
                 noduri_impare = deepcopy(rezerva)
                 random.shuffle(noduri_impare)
