@@ -46,7 +46,7 @@ class Branch_and_Bound:
         return cost
     
     
-    def dfs(self, nod, fi, drum, Di):
+    def parcurgere(self, nod, fi, drum, Di):
         self.vizitati[nod] = 1
         
         if fi < self.lim :
@@ -75,7 +75,7 @@ class Branch_and_Bound:
         Dstart = self.D.copy()
         f_nod_start = self.f(Dstart)
         
-        self.dfs(nod_start, f_nod_start, [nod_start], Dstart)
+        self.parcurgere(nod_start, f_nod_start, [nod_start], Dstart)
 
         if self.lim == np.inf:
             return "Nu exista solutie"
