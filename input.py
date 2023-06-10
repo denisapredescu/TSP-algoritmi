@@ -38,10 +38,10 @@ class Input:
         for i in range(n):
             for j in range(n):
                 if i != j:
-                    self.D[i, j] = math.sqrt( 
+                    self.D[i, j] = round(math.sqrt( 
                             (noduri[i][0] - noduri[j][0]) * (noduri[i][0] - noduri[j][0]) + \
                                 (noduri[i][1] - noduri[j][1]) * (noduri[i][1] - noduri[j][1])
-                        )
+                        ), 4)
                     self.D[j, i] = self.D[i, j]
                 
         return n, D
