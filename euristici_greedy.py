@@ -113,8 +113,8 @@ class EuristiciGreedy:
         # formandu-se un ciclu cu cele 2 noduri
         distanta_minima = float("inf")
         for i in range(n):
-            if D[nod_start][i] < distanta_minima and nod_start != i:
-                distanta_minima = D[nod_start][i]
+            if D[nod_start, i] < distanta_minima and nod_start != i:
+                distanta_minima = D[nod_start, i]
                 k = i 
         ciclu.append(k)                        
         solutie =  2 * D[nod_start, k]  # se calculeaza lungimea ciclului
