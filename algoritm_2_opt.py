@@ -46,7 +46,7 @@ class Doi_OPT:
     
         return f, solutie
     
-    def TSP(self, repetari, algoritm_determinare_ciclu):
+    def TSP(self, algoritm_determinare_ciclu="farthest-insertion", repetari = 1):
         solutie_minima = float("inf")
 
         for _ in range(repetari):
@@ -55,4 +55,4 @@ class Doi_OPT:
                 solutie_minima = solutie
                 ciclu_solutie_minima = ciclu
           
-        return solutie_minima, ciclu_solutie_minima
+        return round(solutie_minima, 4), ciclu_solutie_minima

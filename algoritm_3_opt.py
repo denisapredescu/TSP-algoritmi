@@ -133,7 +133,7 @@ class Trei_OPT:
         return f, solutie
 
 
-    def TSP(self, repetari, algoritm_determinare_ciclu):
+    def TSP(self, algoritm_determinare_ciclu = "farthest-insertion", repetari = 1):
         solutie_minima = float("inf")
 
         for _ in range(repetari):

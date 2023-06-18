@@ -3,7 +3,7 @@ import numpy as np
 import heapq
 
 class EuristiciGreedy:
-    def farthestInsertion(D, n):
+    def farthestInsertion(n, D):
         nod_start = random.randint(0, n - 1)
         h = [0] * n           # lista in cares e retine distanta minima a nodului index fata de ciclu 
         ciclu = [nod_start]   # se insereaza treptat noduri pana cand se ajunge sa aiba lungimea n
@@ -51,7 +51,7 @@ class EuristiciGreedy:
         return ciclu, solutie
 
 
-    def nearestInsertion(D, n):
+    def nearestInsertion(n, D):
         nod_start = random.randint(0, n - 1)
         h = [0] * n           # lista in cares e retine distanta minima a nodului index fata de ciclu 
         ciclu = [nod_start]   # se insereaza treptat noduri pana cand se ajunge sa aiba lungimea n
@@ -99,7 +99,7 @@ class EuristiciGreedy:
         return ciclu, solutie
 
 
-    def cheapestInsertion(D, n):
+    def cheapestInsertion(n, D):
         nod_start = random.randint(0, n - 1)
         # lista de prioritati de forma [crestere, pozitie in care ar fi adaugat nodul k, nod k] 
         h = []  
@@ -158,7 +158,7 @@ class EuristiciGreedy:
         return ciclu, solutie
 
 
-    def nearestNeighbor(D, n):
+    def nearestNeighbor(n, D):
         nod_start = random.randint(0, n - 1)   # se alege random nodul de start
         vizitare = [0 for _ in range(n)] 
         vizitare[nod_start] = 1

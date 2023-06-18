@@ -64,4 +64,4 @@ class AlgoritmulArboreluiDublu:
         self.determinare_ciclu_hamiltonian(arbore, nod_start)
         solutie = self.valoare_ciclu(self.ciclu)
 
-        return solutie
+        return solutie, self.ciclu

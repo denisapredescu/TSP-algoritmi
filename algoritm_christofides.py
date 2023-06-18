@@ -173,4 +173,4 @@ class Christofides:
         ciclu = self.ciclu_hamiltonian(arbore, nod_start)
         solutie = self.valoare_ciclu(ciclu)
 
-        return solutie
+        return round(solutie, 4), ciclu

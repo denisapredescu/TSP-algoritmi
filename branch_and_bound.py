@@ -1,11 +1,10 @@
 import heapq
 import numpy as np
     
-class Branch_and_Bound:
+class BranchAndBound:
     def __init__(self, n, D):
         self.n = n
         self.D = D
-        self.lim = np.inf
         self.drum_optim = None
         self.vizitati = [0] * n 
         self.vecini = self.vecinatate()
@@ -19,11 +18,11 @@ class Branch_and_Bound:
         return vecini
 
 
-    def reducere_matrice(self, Di, i, j, nod_start):
+    def reducere_matrice(self, Di, i, j):
         Dj = Di.copy()
         Dj[i, :] = np.inf          # linia i devine infinit
         Dj[:, j] = np.inf          # coloana j devine infinit  
-        Dj[j, nod_start] = np.inf  # distanta de la j la nodul de start devine infinit
+        Dj[j, self.nod_start] = np.inf  # distanta de la j la nodul de start devine infinit
         cost = self.f(Dj)          # se calculeaza reducerea
     
         return cost, Dj
@@ -64,13 +63,14 @@ class Branch_and_Bound:
                         
                 while len(distante_vecini) != 0:
                     fj, nodj, drumj, Dj = heapq.heappop(distante_vecini) 
-                    self.dfs(nodj, fj, drumj, Dj)
+                    self.parcurgere(nodj, fj, drumj, Dj)
         
         self.vizitati[nod] = 0  
           
           
-    def TSP(self, nod_start = 0):
-        self.start = nod_start
+    def TSP(self, nod_start = 0, lim = np.inf):
+        self.nod_start = nod_start
+        self.lim = lim
         
         Dstart = self.D.copy()
         f_nod_start = self.f(Dstart)

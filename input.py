@@ -2,7 +2,7 @@ import math
 import numpy as np
 
 class Input: 
-    def creareMatriceSimetricaDistanteDate(self, fisier):   
+    def creareMatriceSimetricaDistanteDate(fisier):  
         f = open(fisier)
         n, _ = [int(x) for x in f.readline().split()]
         D = np.full((n, n), np.inf)
@@ -14,7 +14,7 @@ class Input:
         
         return n, D
     
-    def creareMatriceAsimetricaDistanteDate(self, fisier):
+    def creareMatriceAsimetricaDistanteDate(fisier):
         f = open(fisier)
         n, _ = [int(x) for x in f.readline().split()]
         D = np.full((n, n), np.inf)
@@ -25,7 +25,7 @@ class Input:
 
         return n, D
     
-    def creareMatriceDistanteEuclidieneDate(self, fisier):
+    def creareMatriceDistanteEuclidieneDate(fisier):
         f = open(fisier)
         noduri = []
         for line in f:
@@ -38,11 +38,11 @@ class Input:
         for i in range(n):
             for j in range(n):
                 if i != j:
-                    self.D[i, j] = round(math.sqrt( 
+                    D[i, j] = round(math.sqrt( 
                             (noduri[i][0] - noduri[j][0]) * (noduri[i][0] - noduri[j][0]) + \
                                 (noduri[i][1] - noduri[j][1]) * (noduri[i][1] - noduri[j][1])
                         ), 4)
-                    self.D[j, i] = self.D[i, j]
+                    D[j, i] = D[i, j]
                 
         return n, D
         

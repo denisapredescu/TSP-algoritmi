@@ -1,11 +1,9 @@
-import numpy as np
-
-class Programare_dinamica:
+class ProgramareDinamica:
     def __init__(self, n, D):
         self.n = n
         self.D = D
         
-    def TSP(self, nod_start):
+    def TSP(self, nod_start = 0):
         # initializare 
         n = self.n
         D = self.D
